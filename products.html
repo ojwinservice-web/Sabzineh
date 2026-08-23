@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>محصولات عمده | سبزینه</title>
+<meta name="description" content="مشاهده و سفارش عمده سرکه، آبغوره، آبلیمو، گلاب و ترشیجات سنتی ایرانی با قیمت رقابتی و حداقل سفارش مشخص."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫙</text></svg>">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<script src="assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+<!-- ============ Header ============ -->
+<header class="w-full sticky top-0 z-50 bg-surface-container-low transition-all duration-300" id="main-nav">
+  <div class="flex flex-row-reverse justify-between items-center px-margin-mobile md:px-margin-desktop py-3.5 w-full max-w-container-max mx-auto gap-4">
+    <a class="flex items-center gap-2 group flex-shrink-0" href="index.html">
+      <span class="material-symbols-outlined text-primary text-[28px] icon-filled">nutrition</span>
+      <span class="font-display-lg text-headline-lg-mobile md:text-headline-lg text-primary group-hover:opacity-80 transition-opacity">سبزینه</span>
+    </a>
+    <div class="hidden md:flex flex-1 max-w-md mx-4">
+      <div class="relative w-full">
+        <input id="header-search-desktop" class="w-full bg-surface-container rounded-full py-2 px-6 pl-12 border border-outline-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-sm text-on-surface" placeholder="جستجوی محصولات عمده..." type="text"/>
+        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+      </div>
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-secondary hover:text-primary transition-colors font-title-md text-title-md relative after:content-[''] after:absolute after:-bottom-2 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full" href="index.html">خانه</a>
+      <a class="text-primary font-title-md text-title-md relative after:content-[''] after:absolute after:-bottom-2 after:right-0 after:w-full after:h-0.5 after:bg-primary" href="products.html">محصولات</a>
+      <a class="text-secondary hover:text-primary transition-colors font-title-md text-title-md relative after:content-[''] after:absolute after:-bottom-2 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full" href="about.html">درباره ما</a>
+      <a class="text-secondary hover:text-primary transition-colors font-title-md text-title-md relative after:content-[''] after:absolute after:-bottom-2 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full" href="contact.html">تماس با ما</a>
+    </nav>
+    <div class="flex items-center gap-1">
+      <button class="md:hidden text-primary hover:text-primary-fixed-dim transition-colors p-2 rounded-full hover:bg-surface-container-highest" onclick="document.getElementById('mobile-search').classList.toggle('open')" aria-label="جستجو">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <button class="text-primary hover:text-primary-fixed-dim transition-colors p-2 rounded-full hover:bg-surface-container-highest relative" data-cart-open aria-label="سبد خرید">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span data-cart-count class="hidden absolute -top-0.5 -left-0.5 bg-error text-white text-[10px] leading-none w-4 h-4 rounded-full items-center justify-center font-bold flex">0</span>
+      </button>
+      <button class="md:hidden text-primary hover:text-primary-fixed-dim transition-colors p-2 rounded-full hover:bg-surface-container-highest" id="menu-toggle" aria-expanded="false" aria-label="منو">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-search" class="mobile-search md:hidden px-margin-mobile pb-3 max-h-0 overflow-hidden transition-all">
+    <input id="header-search-mobile" class="w-full bg-surface-container rounded-full py-2 px-4 border border-outline-variant text-body-sm" placeholder="جستجوی محصولات عمده..." type="text"/>
+  </div>
+  <div id="mobile-menu" class="md:hidden border-t border-surface-variant">
+    <nav class="flex flex-col p-4 gap-1 text-right">
+      <a class="py-2.5 px-2 rounded-lg hover:bg-surface-container-highest text-on-surface font-title-md" href="index.html">خانه</a>
+      <a class="py-2.5 px-2 rounded-lg bg-surface-container-highest text-primary font-title-md" href="products.html">محصولات</a>
+      <a class="py-2.5 px-2 rounded-lg hover:bg-surface-container-highest text-on-surface font-title-md" href="about.html">درباره ما</a>
+      <a class="py-2.5 px-2 rounded-lg hover:bg-surface-container-highest text-on-surface font-title-md" href="contact.html">تماس با ما</a>
+    </nav>
+  </div>
+</header>
+<style>#mobile-search.open{max-height:80px}</style>
+
+<div class="flex flex-1 max-w-container-max mx-auto w-full">
+  <main class="flex-1 px-margin-mobile md:px-margin-desktop py-8 w-full">
+
+    <!-- Page header -->
+    <div class="mb-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-surface-variant pb-6 reveal">
+      <div>
+        <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">محصولات عمده</h1>
+        <p class="font-body-md text-body-md text-on-surface-variant">بهترین کیفیت برای رستوران‌ها و فروشگاه‌ها — <span id="results-count">0</span> محصول یافت شد</p>
+      </div>
+      <div class="flex gap-2 items-center w-full md:w-auto">
+        <div class="relative flex-1 md:hidden">
+          <input id="product-search" class="w-full bg-surface-container-low rounded-lg py-2.5 px-4 pl-10 border border-outline-variant text-body-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="جستجو در محصولات..." type="text"/>
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+        </div>
+        <select id="sort-select" class="border border-outline-variant rounded-lg px-3 py-2.5 font-label-sm text-label-sm text-on-surface bg-surface-container-lowest focus:border-primary outline-none">
+          <option value="default">مرتب‌سازی: پیش‌فرض</option>
+          <option value="price-asc">ارزان‌ترین</option>
+          <option value="price-desc">گران‌ترین</option>
+          <option value="name">حروف الفبا</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Desktop search (below header on wide screens) -->
+    <div class="hidden md:block relative max-w-sm mb-6 reveal">
+      <input id="product-search-desktop-mirror" class="w-full bg-surface-container-low rounded-lg py-2.5 px-4 pl-10 border border-outline-variant text-body-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="جستجو در محصولات..." type="text"/>
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+    </div>
+
+    <!-- Filter chips -->
+    <div class="flex flex-wrap gap-2 mb-8 reveal">
+      <button data-filter-category="all" class="chip px-4 py-2 rounded-full border border-outline-variant font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low">همه محصولات</button>
+      <button data-filter-category="vinegar" class="chip px-4 py-2 rounded-full border border-outline-variant font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low">سرکه و آبغوره</button>
+      <button data-filter-category="pickles" class="chip px-4 py-2 rounded-full border border-outline-variant font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low">ترشیجات</button>
+      <button data-filter-category="lemon" class="chip px-4 py-2 rounded-full border border-outline-variant font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low">آبلیمو و گلاب</button>
+      <button data-filter-category="portion" class="chip px-4 py-2 rounded-full border border-outline-variant font-label-sm text-label-sm text-on-surface hover:bg-surface-container-low">بسته‌های تک‌نفره</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
+      <!-- JS-rendered product cards -->
+    </div>
+
+    <!-- MOQ note -->
+    <div class="mt-10 bg-surface-container-low rounded-xl p-6 flex items-start gap-3 reveal">
+      <span class="material-symbols-outlined text-primary">info</span>
+      <p class="text-body-sm text-on-surface-variant">قیمت‌ها به تومان و برای خرید عمده است. برای سفارش‌های بیش از حداقل تعیین‌شده، امکان تخفیف پلکانی وجود دارد — برای استعلام قیمت نهایی از طریق دکمه «ثبت سفارش در تلگرام» با ما در ارتباط باشید.</p>
+    </div>
+
+  </main>
+</div>
+
+<!-- ============ Footer ============ -->
+<footer class="bg-primary-container w-full mt-auto text-right">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto">
+    <div class="flex flex-col gap-4 md:col-span-1">
+      <span class="font-title-md text-title-md text-primary-fixed flex items-center gap-2"><span class="material-symbols-outlined icon-filled">nutrition</span> سبزینه</span>
+      <p class="font-body-sm text-body-sm text-on-primary opacity-80">تامین‌کننده عمده سرکه، آبغوره، آبلیمو، گلاب و ترشیجات سنتی برای رستوران‌ها، هتل‌ها و فروشگاه‌ها.</p>
+      <div class="flex items-center gap-3 mt-2">
+        <a href="#" data-cfg-href="telegram" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-primary-fixed hover:bg-white/20 transition-colors"><span class="material-symbols-outlined text-[20px]">send</span></a>
+        <a href="#" data-cfg-href="instagram" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-primary-fixed hover:bg-white/20 transition-colors"><span class="material-symbols-outlined text-[20px]">photo_camera</span></a>
+        <a href="#" data-cfg-href="whatsapp" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-primary-fixed hover:bg-white/20 transition-colors"><span class="material-symbols-outlined text-[20px]">chat</span></a>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3">
+      <h4 class="font-title-md text-[15px] text-primary-fixed mb-1">دسترسی سریع</h4>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="index.html">خانه</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="products.html">محصولات</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="about.html">درباره ما</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="contact.html">تماس با ما</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <h4 class="font-title-md text-[15px] text-primary-fixed mb-1">دسته‌بندی‌ها</h4>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="products.html?cat=vinegar">سرکه و آبغوره</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="products.html?cat=pickles">ترشیجات</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="products.html?cat=lemon">آبلیمو و گلاب</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="products.html?cat=portion">بسته‌های تک‌نفره</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <h4 class="font-title-md text-[15px] text-primary-fixed mb-1">تماس با ما</h4>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 flex items-center gap-2" href="#" data-cfg-href="phone"><span class="material-symbols-outlined text-[18px]">call</span><span data-cfg-text="phone"></span></a>
+      <a href="#" data-cfg-href="telegram" target="_blank" rel="noopener" class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim flex items-center gap-2 transition-all"><span class="material-symbols-outlined text-[18px]">send</span><span>پشتیبانی در تلگرام</span></a>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-4 px-margin-mobile md:px-margin-desktop">
+    <p class="font-body-sm text-body-sm text-on-primary opacity-70 text-center max-w-container-max mx-auto">© <span data-year></span> سبزینه. تمامی حقوق محفوظ است.</p>
+  </div>
+</footer>
+
+<!-- ============ Cart Drawer ============ -->
+<div id="cart-overlay"></div>
+<aside id="cart-drawer" aria-label="سبد خرید">
+  <div class="flex items-center justify-between p-4 border-b border-surface-variant">
+    <h2 class="font-title-md text-title-md text-primary flex items-center gap-2"><span class="material-symbols-outlined">shopping_cart</span> سبد خرید</h2>
+    <button data-cart-close class="p-2 rounded-full hover:bg-surface-container-low text-secondary" aria-label="بستن"><span class="material-symbols-outlined">close</span></button>
+  </div>
+  <div id="cart-drawer-body" class="flex-1 overflow-y-auto"></div>
+  <div id="cart-drawer-footer" class="hidden border-t border-surface-variant p-4 flex flex-col gap-3">
+    <div class="flex items-center justify-between">
+      <span class="font-title-md text-title-md text-primary">جمع کل</span>
+      <span id="cart-drawer-total" class="font-title-md text-title-md text-primary">۰ تومان</span>
+    </div>
+    <button id="cart-checkout-telegram" class="w-full bg-primary text-on-primary h-12 rounded-lg font-title-md flex items-center justify-center gap-2 hover:bg-primary-container transition-colors">
+      <span class="material-symbols-outlined">send</span><span>ثبت سفارش در تلگرام</span>
+    </button>
+    <button id="cart-clear" class="w-full text-secondary hover:text-error text-body-sm underline transition-colors">خالی کردن سبد خرید</button>
+  </div>
+</aside>
+
+<!-- Floating Telegram button -->
+<a href="#" data-cfg-href="telegram" target="_blank" rel="noopener" class="fab-telegram w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center transition-all" aria-label="سفارش در تلگرام">
+  <span class="material-symbols-outlined">send</span>
+</a>
+
+<!-- Toast -->
+<div id="toast" class="glass-dark text-white px-5 py-3 rounded-full flex items-center gap-2 font-body-sm shadow-lg"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/products-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/products-render.js"></script>
+<script src="assets/js/cart.js"></script>
+<script>
+  // Sync the three search inputs (desktop header, mobile header, page toolbar) with the
+  // catalog's #product-search field so filtering works from anywhere.
+  (function () {
+    var primary = document.getElementById("product-search");
+    var mirrors = [
+      document.getElementById("header-search-desktop"),
+      document.getElementById("header-search-mobile"),
+      document.getElementById("product-search-desktop-mirror")
+    ];
+    var params = new URLSearchParams(window.location.search);
+    var initialQuery = params.get("q") || "";
+    mirrors.forEach(function (el) { if (el) el.value = initialQuery; });
+
+    mirrors.forEach(function (el) {
+      if (!el) return;
+      el.addEventListener("input", function () {
+        if (primary) {
+          primary.value = el.value;
+          primary.dispatchEvent(new Event("input"));
+        }
+        mirrors.forEach(function (m) { if (m && m !== el) m.value = el.value; });
+      });
+    });
+  })();
+</script>
+</body>
+</html>

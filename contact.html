@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تماس با ما | سبزینه</title>
+<meta name="description" content="راه‌های ارتباطی با سبزینه: تماس تلفنی، تلگرام، واتس‌اپ و فرم تماس برای استعلام قیمت و ثبت سفارش عمده."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🫙</text></svg>">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<script src="assets/js/tailwind-config.js"></script>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+
+<!-- ============ Header ============ -->
+<header class="w-full sticky top-0 z-50 bg-surface-container-low transition-all duration-300" id="main-nav">
+  <div class="flex flex-row-reverse justify-between items-center px-margin-mobile md:px-margin-desktop py-3.5 w-full max-w-container-max mx-auto gap-4">
+    <a class="flex items-center gap-2 group flex-shrink-0" href="index.html">
+      <span class="material-symbols-outlined text-primary text-[28px] icon-filled">nutrition</span>
+      <span class="font-display-lg text-headline-lg-mobile md:text-headline-lg text-primary group-hover:opacity-80 transition-opacity">سبزینه</span>
+    </a>
+    <div class="hidden md:flex flex-1 max-w-md mx-4">
+      <div class="relative w-full">
+        <input class="w-full bg-surface-container rounded-full py-2 px-6 pl-12 border border-outline-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body-md text-body-sm text-on-surface" placeholder="جستجوی محصولات عمده..." type="text" onkeydown="if(event.key==='Enter'){window.location.href='products.html?q='+encodeURIComponent(this.value)}"/>
+        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+      </div>
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-secondary hover:text-primary transition-colors font-title-md text-title-md relative after:content-[''] after:absolute after:-bottom-2 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full" href="index.html">خانه</a>
+      <a class="text-secondary hover:text-primary transition-colors font-title-md text-title-md relative after:content-[''] after:absolute after:-bottom-2 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full" href="products.html">محصولات</a>
+      <a class="text-secondary hover:text-primary transition-colors font-title-md text-title-md relative after:content-[''] after:absolute after:-bottom-2 after:right-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full" href="about.html">درباره ما</a>
+      <a class="text-primary font-title-md text-title-md relative after:content-[''] after:absolute after:-bottom-2 after:right-0 after:w-full after:h-0.5 after:bg-primary" href="contact.html">تماس با ما</a>
+    </nav>
+    <div class="flex items-center gap-1">
+      <button class="md:hidden text-primary hover:text-primary-fixed-dim transition-colors p-2 rounded-full hover:bg-surface-container-highest" onclick="document.getElementById('mobile-search').classList.toggle('open')" aria-label="جستجو">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <button class="text-primary hover:text-primary-fixed-dim transition-colors p-2 rounded-full hover:bg-surface-container-highest relative" data-cart-open aria-label="سبد خرید">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span data-cart-count class="hidden absolute -top-0.5 -left-0.5 bg-error text-white text-[10px] leading-none w-4 h-4 rounded-full items-center justify-center font-bold flex">0</span>
+      </button>
+      <button class="md:hidden text-primary hover:text-primary-fixed-dim transition-colors p-2 rounded-full hover:bg-surface-container-highest" id="menu-toggle" aria-expanded="false" aria-label="منو">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-search" class="mobile-search md:hidden px-margin-mobile pb-3 max-h-0 overflow-hidden transition-all">
+    <input class="w-full bg-surface-container rounded-full py-2 px-4 border border-outline-variant text-body-sm" placeholder="جستجوی محصولات عمده..." type="text" onkeydown="if(event.key==='Enter'){window.location.href='products.html?q='+encodeURIComponent(this.value)}"/>
+  </div>
+  <div id="mobile-menu" class="md:hidden border-t border-surface-variant">
+    <nav class="flex flex-col p-4 gap-1 text-right">
+      <a class="py-2.5 px-2 rounded-lg hover:bg-surface-container-highest text-on-surface font-title-md" href="index.html">خانه</a>
+      <a class="py-2.5 px-2 rounded-lg hover:bg-surface-container-highest text-on-surface font-title-md" href="products.html">محصولات</a>
+      <a class="py-2.5 px-2 rounded-lg hover:bg-surface-container-highest text-on-surface font-title-md" href="about.html">درباره ما</a>
+      <a class="py-2.5 px-2 rounded-lg bg-surface-container-highest text-primary font-title-md" href="contact.html">تماس با ما</a>
+    </nav>
+  </div>
+</header>
+<style>#mobile-search.open{max-height:80px}</style>
+
+<main class="flex-grow flex flex-col w-full relative z-10">
+
+  <!-- Hero -->
+  <section class="relative w-full bg-primary overflow-hidden py-14 md:py-16">
+    <div class="hero-blob w-[320px] h-[320px] bg-primary-fixed-dim -top-28 -left-16"></div>
+    <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center reveal">
+      <h1 class="font-display-lg text-[32px] leading-[1.3] md:text-display-lg text-on-primary mb-3">تماس با ما</h1>
+      <p class="font-body-lg text-body-lg text-secondary-fixed max-w-xl mx-auto">برای استعلام قیمت، ثبت سفارش عمده یا هر سوالی، تیم ما همیشه پاسخگوی شماست.</p>
+    </div>
+  </section>
+
+  <!-- Contact cards -->
+  <section class="py-12 md:py-16 bg-background">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter reveal-stagger -mt-24 md:-mt-28 relative z-10">
+        <a href="#" data-cfg-href="phone" class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 ambient-shadow text-center hover:-translate-y-1 transition-transform">
+          <span class="material-symbols-outlined text-primary text-3xl mb-3 block">call</span>
+          <h3 class="font-title-md text-[15px] text-primary mb-1">تماس تلفنی</h3>
+          <p class="text-body-sm text-on-surface-variant" data-cfg-text="phone" dir="ltr"></p>
+        </a>
+        <a href="#" data-cfg-href="telegram" target="_blank" rel="noopener" class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 ambient-shadow text-center hover:-translate-y-1 transition-transform">
+          <span class="material-symbols-outlined text-primary text-3xl mb-3 block">send</span>
+          <h3 class="font-title-md text-[15px] text-primary mb-1">تلگرام</h3>
+          <p class="text-body-sm text-on-surface-variant">سفارش و مشاوره سریع</p>
+        </a>
+        <a href="#" data-cfg-href="whatsapp" target="_blank" rel="noopener" class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 ambient-shadow text-center hover:-translate-y-1 transition-transform">
+          <span class="material-symbols-outlined text-primary text-3xl mb-3 block">chat</span>
+          <h3 class="font-title-md text-[15px] text-primary mb-1">واتس‌اپ</h3>
+          <p class="text-body-sm text-on-surface-variant">پاسخگویی در ساعات اداری</p>
+        </a>
+        <a href="#" data-cfg-href="instagram" target="_blank" rel="noopener" class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 ambient-shadow text-center hover:-translate-y-1 transition-transform">
+          <span class="material-symbols-outlined text-primary text-3xl mb-3 block">photo_camera</span>
+          <h3 class="font-title-md text-[15px] text-primary mb-1">اینستاگرام</h3>
+          <p class="text-body-sm text-on-surface-variant">جدیدترین محصولات و پیشنهادها</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form + Info -->
+  <section class="pb-16 md:pb-20 bg-background">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-5 gap-gutter">
+
+      <!-- Form -->
+      <div class="lg:col-span-3 bg-surface-container-lowest border border-surface-variant rounded-2xl p-6 md:p-8 ambient-shadow reveal">
+        <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">فرم تماس و استعلام قیمت</h2>
+        <p class="text-on-surface-variant text-body-sm mb-6">فرم را تکمیل کنید تا پیام شما مستقیم برای ربات تلگرام سبزینه ارسال شود.</p>
+        <form id="contact-form" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="sm:col-span-1">
+            <label class="block font-label-sm text-label-sm text-on-surface-variant mb-1.5">نام و نام‌خانوادگی</label>
+            <input required name="fullname" type="text" class="w-full border border-outline-variant rounded-lg px-4 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface" placeholder="مثلاً: علی رضایی"/>
+          </div>
+          <div class="sm:col-span-1">
+            <label class="block font-label-sm text-label-sm text-on-surface-variant mb-1.5">نام فروشگاه / رستوران</label>
+            <input name="business" type="text" class="w-full border border-outline-variant rounded-lg px-4 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface" placeholder="مثلاً: رستوران گلستان"/>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block font-label-sm text-label-sm text-on-surface-variant mb-1.5">شماره تماس</label>
+            <input required name="phone" type="tel" dir="ltr" class="w-full border border-outline-variant rounded-lg px-4 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface" placeholder="09xxxxxxxxx"/>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block font-label-sm text-label-sm text-on-surface-variant mb-1.5">پیام شما</label>
+            <textarea name="message" rows="4" class="w-full border border-outline-variant rounded-lg px-4 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface resize-none" placeholder="محصول موردنظر، مقدار تقریبی سفارش و هر توضیح دیگر..."></textarea>
+          </div>
+          <div class="sm:col-span-2 mt-2">
+            <button type="submit" class="w-full bg-primary text-on-primary h-12 rounded-lg font-title-md flex items-center justify-center gap-2 hover:bg-primary-container transition-colors">
+              <span class="material-symbols-outlined">send</span><span>ارسال از طریق تلگرام</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Info -->
+      <div class="lg:col-span-2 flex flex-col gap-6 reveal">
+        <div class="bg-primary-container rounded-2xl p-6 text-right">
+          <h3 class="font-title-md text-title-md text-primary-fixed mb-4 flex items-center gap-2"><span class="material-symbols-outlined">storefront</span> اطلاعات فروشگاه</h3>
+          <ul class="flex flex-col gap-3 text-on-primary opacity-90 text-body-sm">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[18px] mt-0.5">schedule</span><span data-cfg-text="workHours"></span></li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[18px] mt-0.5">call</span><span dir="ltr" data-cfg-text="mobile"></span></li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-[18px] mt-0.5">send</span><span dir="ltr">t.me/Sabzinehco_bot</span></li>
+          </ul>
+        </div>
+        <div class="bg-surface-container-lowest border border-surface-variant rounded-2xl p-6 ambient-shadow flex-1">
+          <h3 class="font-title-md text-title-md text-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">bolt</span> سریع‌ترین راه سفارش</h3>
+          <p class="text-on-surface-variant text-body-sm mb-5">برای پاسخ فوری و ثبت سفارش عمده، پیام خود را مستقیم برای ربات تلگرام سبزینه ارسال کنید.</p>
+          <a href="#" data-cfg-href="telegram" target="_blank" rel="noopener" class="w-full bg-primary text-on-primary h-12 rounded-lg font-title-md flex items-center justify-center gap-2 hover:bg-primary-container transition-colors">
+            <span class="material-symbols-outlined">send</span><span>گفتگو در تلگرام</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="bg-primary-container w-full mt-auto text-right">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 w-full max-w-container-max mx-auto">
+    <div class="flex flex-col gap-4 md:col-span-1">
+      <span class="font-title-md text-title-md text-primary-fixed flex items-center gap-2"><span class="material-symbols-outlined icon-filled">nutrition</span> سبزینه</span>
+      <p class="font-body-sm text-body-sm text-on-primary opacity-80">تامین‌کننده عمده سرکه، آبغوره، آبلیمو، گلاب و ترشیجات سنتی برای رستوران‌ها، هتل‌ها و فروشگاه‌ها.</p>
+      <div class="flex items-center gap-3 mt-2">
+        <a href="#" data-cfg-href="telegram" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-primary-fixed hover:bg-white/20 transition-colors"><span class="material-symbols-outlined text-[20px]">send</span></a>
+        <a href="#" data-cfg-href="instagram" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-primary-fixed hover:bg-white/20 transition-colors"><span class="material-symbols-outlined text-[20px]">photo_camera</span></a>
+        <a href="#" data-cfg-href="whatsapp" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-primary-fixed hover:bg-white/20 transition-colors"><span class="material-symbols-outlined text-[20px]">chat</span></a>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3">
+      <h4 class="font-title-md text-[15px] text-primary-fixed mb-1">دسترسی سریع</h4>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="index.html">خانه</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="products.html">محصولات</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="about.html">درباره ما</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="contact.html">تماس با ما</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <h4 class="font-title-md text-[15px] text-primary-fixed mb-1">دسته‌بندی‌ها</h4>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="products.html?cat=vinegar">سرکه و آبغوره</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="products.html?cat=pickles">ترشیجات</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="products.html?cat=lemon">آبلیمو و گلاب</a>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim transition-all" href="products.html?cat=portion">بسته‌های تک‌نفره</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <h4 class="font-title-md text-[15px] text-primary-fixed mb-1">تماس با ما</h4>
+      <a class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 flex items-center gap-2" href="#" data-cfg-href="phone"><span class="material-symbols-outlined text-[18px]">call</span><span data-cfg-text="phone"></span></a>
+      <a href="#" data-cfg-href="telegram" target="_blank" rel="noopener" class="font-body-sm text-body-sm text-on-primary opacity-80 hover:opacity-100 hover:text-tertiary-fixed-dim flex items-center gap-2 transition-all"><span class="material-symbols-outlined text-[18px]">send</span><span>پشتیبانی در تلگرام</span></a>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-4 px-margin-mobile md:px-margin-desktop">
+    <p class="font-body-sm text-body-sm text-on-primary opacity-70 text-center max-w-container-max mx-auto">© <span data-year></span> سبزینه. تمامی حقوق محفوظ است.</p>
+  </div>
+</footer>
+
+<!-- ============ Cart Drawer ============ -->
+<div id="cart-overlay"></div>
+<aside id="cart-drawer" aria-label="سبد خرید">
+  <div class="flex items-center justify-between p-4 border-b border-surface-variant">
+    <h2 class="font-title-md text-title-md text-primary flex items-center gap-2"><span class="material-symbols-outlined">shopping_cart</span> سبد خرید</h2>
+    <button data-cart-close class="p-2 rounded-full hover:bg-surface-container-low text-secondary" aria-label="بستن"><span class="material-symbols-outlined">close</span></button>
+  </div>
+  <div id="cart-drawer-body" class="flex-1 overflow-y-auto"></div>
+  <div id="cart-drawer-footer" class="hidden border-t border-surface-variant p-4 flex flex-col gap-3">
+    <div class="flex items-center justify-between">
+      <span class="font-title-md text-title-md text-primary">جمع کل</span>
+      <span id="cart-drawer-total" class="font-title-md text-title-md text-primary">۰ تومان</span>
+    </div>
+    <button id="cart-checkout-telegram" class="w-full bg-primary text-on-primary h-12 rounded-lg font-title-md flex items-center justify-center gap-2 hover:bg-primary-container transition-colors">
+      <span class="material-symbols-outlined">send</span><span>ثبت سفارش در تلگرام</span>
+    </button>
+    <button id="cart-clear" class="w-full text-secondary hover:text-error text-body-sm underline transition-colors">خالی کردن سبد خرید</button>
+  </div>
+</aside>
+
+<!-- Floating Telegram button -->
+<a href="#" data-cfg-href="telegram" target="_blank" rel="noopener" class="fab-telegram w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center transition-all" aria-label="سفارش در تلگرام">
+  <span class="material-symbols-outlined">send</span>
+</a>
+
+<!-- Toast -->
+<div id="toast" class="glass-dark text-white px-5 py-3 rounded-full flex items-center gap-2 font-body-sm shadow-lg"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/products-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/products-render.js"></script>
+<script src="assets/js/cart.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var cfg = window.SABZINEH_CONFIG || {};
+
+    var form = document.getElementById("contact-form");
+    if (!form) return;
+
+    function buildMessage(data) {
+      var lines = [];
+      lines.push("پیام جدید از فرم تماس سایت " + (cfg.storeNameEn || "Sabzineh") + ":");
+      lines.push("");
+      lines.push("نام: " + (data.fullname || "-"));
+      if (data.business) lines.push("فروشگاه/رستوران: " + data.business);
+      lines.push("تلفن: " + (data.phone || "-"));
+      lines.push("");
+      lines.push("پیام:");
+      lines.push(data.message || "-");
+      return lines.join("\n");
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var data = {
+        fullname: form.fullname.value.trim(),
+        business: form.business.value.trim(),
+        phone: form.phone.value.trim(),
+        message: form.message.value.trim()
+      };
+
+      if (!data.fullname || !data.phone) {
+        if (window.showToast) window.showToast("لطفاً نام و شماره تماس را وارد کنید", "error");
+        return;
+      }
+
+      var text = buildMessage(data);
+      var url = "https://t.me/" + (cfg.telegramUsername || "Sabzinehco_bot") + "?text=" + encodeURIComponent(text);
+      window.open(url, "_blank", "noopener");
+
+      if (window.showToast) window.showToast("در حال انتقال شما به تلگرام...", "check_circle");
+    });
+  });
+</script>
+</body>
+</html>
